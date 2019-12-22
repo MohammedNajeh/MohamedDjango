@@ -1,0 +1,51 @@
+{% extends 'mypf/base.html' %}
+
+{% block content %}
+
+<div class="ah">
+    <div class="container">
+
+        <div class="row justify-content-center margin">
+
+    <div class="countener12">
+        <h2 style="color: #ff1317 ;font-family: 'Fira Code' ;font-weight: 900">Motivation</h2><hr>
+        <p style="color:#333 ;font-size: 20px;font-family:'Fira Code Light'"> The will to win, the desire to succeed, the urge to reach your full potential... these are the keys that will unlock the door to personal excellence.
+
+Confucius</p>
+    </div>
+            <div class="col-7">
+                <!--Custom Api form-->
+
+                </div>
+
+
+                    <div class="pflink">
+                        <a style="text-align: center" href="{% url 'portfolio' %}">Check Portfolio</a>
+                    </div>
+
+                <form method="POST" class="form-inline">
+                    {% csrf_token %}
+                    <label class="my-1 mr-2" for="name">Name:</label>
+                    <input  style="margin-left: 20px" type="text" name="name" class="form-control mb-2 mr-sm-2" id="name" placeholder="Jane Doe">
+
+                    <label class="my-1 mr-2" for="gender">Gender:</label>
+                    <select style="margin-left: 12px" name="gender" class="custom-select mb-2 mr-sm-2" id="gender">
+                        <option selected>Select</option>
+                        <option value="m">Male</option>
+                        <option value="f">Female</option>
+                    </select>
+                    <button style="margin-left: 20px"type="button" class="btn btn-danger mb-2 btn-sub">Generate Your</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="row justify-content-center margin">
+            <div class="col-8">
+                <img  style="border: 10px solid #ff1317;border-radius: 50px " class="img-fluid" name="srcapi" id="srcapi" src="https://belikebill.ga/billgen-API.php?default=1&name=Jane Doe&sex=f">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
